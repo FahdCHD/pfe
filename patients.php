@@ -297,12 +297,7 @@ else
 			</li>
 		</ul>
 		<ul class="side-menu">
-			<li>
-				<a href="#">
-					<i class='bx bxs-cog'></i>
-					<span class="text">Paramètres</span>
-				</a>
-			</li>
+
 			<li>
 				<a href="Login.html" class="logout">
 					<i class='bx bxs-log-out-circle'></i>
@@ -341,7 +336,7 @@ margin-bottom:10px;">
 						<div style="display: flex;  height: 35px;">
 							<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 								data-bs-target="#insertdata" style="font-size: 78%;">
-								<b>Ajouter Patient</b>
+								<b>Ajouter un Patient</b>
 							</button>
 						</div>
 
@@ -464,8 +459,7 @@ margin-bottom:10px;">
 
 	<script src="script1.js"></script>
 
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="../js/jquery-3.3.1.js"></script>
 
 	<script>
 		$('document').ready(function () {
