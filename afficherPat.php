@@ -10,17 +10,16 @@ if (isset($_POST["click_view_button"])) {
         die("invalid query:" . $conn->error);
     }
     while ($row = $resultatP->fetch_assoc()) {
-        echo "<h5>ID: </h5>" . $row["id_patient"];
-        echo "<h5>Nom et Prenom: </h5>" . $row["nom_prenom_patient"];
-        echo "<h5>Sexe: </h5>" . $row["sexe_patient"];
-        echo "<h5>Age: </h5>" . $row["age_patient"];
-        echo "<h5>Ville: </h5>" . $row["ville_patient"];
-        echo "<h5>Mobile: </h5>" . $row["mobile_patient"];
-        echo "<h5>Profession: </h5>" . $row["profession"];
-        echo "<h5>Situation: </h5>" . $row["situation"];
-        echo "<h5>Poids(Kg): </h5>" . $row["poids"];
-        echo "<h5>Taille(Cm): </h5>" . $row["taille"];
-        echo "<h5>Date: </h5>" . $row["la_date"];
+        echo "<b>Nom et Prenom: </b>" . $row["nom_prenom_patient"] . "<br>";
+        echo "<b>Sexe: </b>" . $row["sexe_patient"] . "<br>";
+        echo "<b>Age: </b>" . $row["age_patient"] . "<br>";
+        echo "<b>Ville: </b>" . $row["ville_patient"] . "<br>";
+        echo "<b>Mobile: </b>" . $row["mobile_patient"] . "<br>";
+        echo "<b>Profession: </b>" . $row["profession"] . "<br>";
+        echo "<b>Situation: </b>" . $row["situation"] . "<br>";
+        echo "<b>Poids: </b>" . $row["poids"] . "kg<br>";
+        echo "<b>Taille: </b>" . $row["taille"] . "cm<br>";
+        echo "<b>Date: </b>" . $row["la_date"] . "<br>";
 
     }
 }

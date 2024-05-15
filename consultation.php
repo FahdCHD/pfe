@@ -114,8 +114,7 @@ $resultatC = $conn->query($sql);
 
 						<div class="form-group mb-2">
 							Heure
-							<input type="time" id="hourInput" name="hour" min="00:00" max="23:59" step="3600"
-								class="form-control">
+							<input type="time" id="hourInput" name="hour" class="form-control">
 						</div>
 
 						<div class="modal-footer">
@@ -148,18 +147,18 @@ $resultatC = $conn->query($sql);
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body ">
-					<div class="view_cons_data">
+					<div id="view_cons_data">
 
 					</div>
 				</div>
-
-				<!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-		<button type="button" class="btn btn-primary">Enregistrer</button>
-	   -->
+				<div class="modal-footer">
+					<button type="button" name="retour" class="btn btn-secondary" data-bs-dismiss="modal">
+						Fermer
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<section id="sidebar">
 		<a href="#" class="brand">
@@ -293,7 +292,7 @@ margin-bottom:10px;">
 							}
 							while ($consultationRow = $resultatC->fetch_assoc()) { ?>
 								<tr>
-									<td class="num_cons" style="display:none">
+									<td style="display:none">
 										<?php echo $consultationRow['NumeroConsultation'] ?>
 									</td>
 									<td><?php echo $consultationRow['nom_prenom_patient'] ?> </td>
@@ -302,8 +301,9 @@ margin-bottom:10px;">
 									<td><?php echo $consultationRow['situation'] ?> </td>
 
 									<td>
-										<button type="button" name="infoCons" class="btn btn-secondary view_data"
-											data-bs-toggle="modal" data-bs-target="#viewdata">
+										<button id='<?php echo $consultationRow['NumeroConsultation'] ?>' type="button"
+											name="infoCons" class="btn btn-secondary view_data" data-bs-toggle="modal"
+											data-bs-target="#viewdata">
 											<i class="bi bi-info"></i>
 										</button>
 										<button name="modifierCons" type="button" class="btn btn-primary edit_data"
@@ -336,25 +336,20 @@ margin-bottom:10px;">
 	<script src="../js/jquery-3.3.1.js"></script>
 
 	<script>
-		$('document').ready(function () {
-			$('.view_data').click(function (e) {
-				e.preventDefault();
-				// console.log("hello");
-				var num_cons = $(this).closest('tr').find('.num_cons').text();
-				// console.log(user_id);
+		$(document).ready(function () {
+			$('button').click(function () {
+				id_emp = $(this).attr('id');
 				$.ajax({
-					method: "POST",
-					url: "afficherCons.php",
-					data: {
-						"click_view_button": true,
-						"num_cons": num_cons,
-					},
-					success: function (response) {
-						$('.view_cons_data').html(response)
+					url: "afchCons.php",
+					method: 'post',
+					data: { emp_id: id_emp },
+					success: function (result) {
+						$("#view_cons_data").html(result);
 					}
-				})
-			});
-		});
+				});
+				$('#myModal').modal("show");
+			})
+		})
 	</script>
 </body>
 

@@ -244,10 +244,11 @@ else
 
 					</div>
 				</div>
-
-				<!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-		<button type="button" class="btn btn-primary">Enregistrer</button>
-	   -->
+				<div class="modal-footer">
+					<button type="button" name="retour" class="btn btn-secondary" data-bs-dismiss="modal">
+						Fermer
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -438,7 +439,7 @@ margin-bottom:10px;">
 						<?php } ?>
 				</div>
 
-				<script>
+				<!-- <script>
 					$(document).ready(function () {
 						$('.pagination .page-link').click(function (e) {
 							e.preventDefault();
@@ -447,7 +448,7 @@ margin-bottom:10px;">
 							// $(this).addClass('active');
 						});
 					});
-				</script>
+				</script> -->
 
 			</div>
 			</div>
