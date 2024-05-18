@@ -328,7 +328,7 @@ else
 margin-bottom:10px;">
 						<div style="display: flex;  height: 35px;">
 							<input style="border:1px solid #bbbbbb ; border-radius:4px" type="text" name="nomP"
-								placeholder="Taper le nom du patient">
+								placeholder=" Taper le nom du patient">
 							&nbsp &nbsp
 
 							<button type="submit" class="btn btn-primary" style='font-size:78%'
@@ -497,7 +497,6 @@ margin-bottom:10px;">
 						"user_id": user_id,
 					},
 					success: function (response) {
-						console.log(response);
 						$.each(response, function (key, value) {
 							$('#id_patient').val(value['id_patient']);
 							$('#name').val(value['nom_prenom_patient']);
